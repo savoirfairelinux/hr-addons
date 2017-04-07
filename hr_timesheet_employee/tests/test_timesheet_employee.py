@@ -70,12 +70,12 @@ class TimesheetEmployee(common.SavepointCase):
         self.assertEqual(
             account_analytic_line_1.employee_id, self.employee_1)
 
-    def test_2_compute_employee_id_user_not_linked_to_an_employee(self):
+    def test_2_raise_exception_when_user_not_linked_to_an_employee(self):
         account_analytic_line_1 = self.account_analytic_line_1
         with self.assertRaises(ValidationError):
             account_analytic_line_1.user_id = self.user_2
 
-    def test_3_compute_employee_id_user_linked_to_2_employees(self):
+    def test_3_raise_exception_when_user_linked_to_2_employees(self):
         account_analytic_line_1 = self.account_analytic_line_1
         with self.assertRaises(ValidationError):
             account_analytic_line_1.user_id = self.user_3
@@ -83,3 +83,8 @@ class TimesheetEmployee(common.SavepointCase):
     def test_4_compute_employee_id_analytic_line_is_not_timesheet(self):
         account_analytic_line_2 = self.account_analytic_line_2
         self.assertFalse(account_analytic_line_2.employee_id)
+
+    def test_5_raise_exception_when_user_not_filled(self):
+        account_analytic_line_1 = self.account_analytic_line_1
+        with self.assertRaises(ValidationError):
+            account_analytic_line_1.user_id = False
