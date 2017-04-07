@@ -25,5 +25,5 @@ class AccountAnalyticLine(models.Model):
     @api.multi
     def write(self, vals):
         super(AccountAnalyticLine, self).write(vals)
-        if 'is_timesheet' in vals:
+        if 'is_timesheet' in vals or 'user_id' in vals:
             self.filtered(lambda l: l.is_timesheet).compute_timesheet_values()
