@@ -8,7 +8,7 @@
     "version": "10.0.1.0.0",
     "category": "",
     "website": "https://www.savoirfairelinux.com/",
-    "author": "Savoir-Faire Linux, Odoo Community Association (OCA)",
+    "author": "Savoir-Faire Linux",
     "license": "LGPL-3",
     "application": False,
     "installable": True,
