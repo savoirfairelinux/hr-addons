@@ -2,7 +2,8 @@
 # © 2017 Savoir-faire Linux
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/LGPL).
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class AccountAnalyticLine(models.Model):
@@ -19,7 +20,11 @@ class AccountAnalyticLine(models.Model):
     def create(self, vals):
         line = super(AccountAnalyticLine, self).create(vals)
         if line.is_timesheet:
+            if not line.user_id:
+                raise ValidationError(_(
+                    'No user was linked to this timesheet entry.'))
             line.compute_timesheet_values()
+
         return line
 
     @api.multi

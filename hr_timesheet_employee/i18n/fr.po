@@ -18,12 +18,12 @@ msgstr ""
 #. module: hr_timesheet_employee
 #: model:ir.model,name:hr_timesheet_employee.model_account_analytic_line
 msgid "Analytic Line"
-msgstr ""
+msgstr "Ligne analytique"
 
 #. module: hr_timesheet_employee
 #: model:ir.model.fields,field_description:hr_timesheet_employee.field_account_analytic_line_employee_id
 msgid "Employee"
-msgstr ""
+msgstr "Employé"
 
 #. module: hr_timesheet_employee
 #: code:addons/hr_timesheet_employee/models/account_analytic_line.py:0
@@ -36,3 +36,9 @@ msgstr "Aucun employé lié à l'utilisateur %s n'a été trouvé."
 #, python-format
 msgid "The user %(user)s is attached to more than one employee. These employees are : %(employee)s."
 msgstr "L'utilisateur %(user)s est lié à plus d'un employé. Ces employés sont : %(employee)s."
+
+#. module: hr_timesheet_employee
+#: code:addons/hr_timesheet_employee/models/account_analytic_line.py:0
+#, python-format
+msgid "The User field must be filled."
+msgstr "Le champ Utilisateur devrait être renseigné."

@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* project_invoicing
+# 	* analytic_line_is_timesheet
 #
 msgid ""
 msgstr ""
@@ -17,12 +17,18 @@ msgstr ""
 "Language: fr\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#. module: project_invoicing
-#: model:ir.model,name:project_invoicing.model_account_analytic_line
+#. module: analytic_line_is_timesheet
+#: model:ir.model,name:analytic_line_is_timesheet.model_account_analytic_line
 msgid "Analytic Line"
 msgstr "Ligne analytique"
 
-#. module: project_invoicing
-#: model:ir.model.fields,field_description:project_invoicing.field_account_analytic_line_is_timesheet
+#. module: analytic_line_is_timesheet
+#: model:ir.model.fields,field_description:analytic_line_is_timesheet.field_account_analytic_line_is_timesheet
 msgid "Is Timesheet"
 msgstr "Est une feuille de temps"
+
+#. module: analytic_line_is_timesheet
+#: code:addons/analytic_line_is_timesheet/models/account_analytic_line.py:0
+#, python-format
+msgid "No user was linked to this timesheet entry."
+msgstr "Aucun utilisateur n'est lié à cette entrée de feuille de temps."

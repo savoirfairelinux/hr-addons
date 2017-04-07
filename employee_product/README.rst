@@ -9,6 +9,11 @@ Employee Product
 Add product_id field to hr_employee. 
  * Calculate the new account analaytic line amount.
 
+Known issues / Roadmap
+======================
+
+* The sale_timesheet module is not compatible, sale_timesheet auto_install must be False.  
+
 Bug Tracker
 ===========
 
