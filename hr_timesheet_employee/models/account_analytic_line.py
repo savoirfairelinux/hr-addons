@@ -33,4 +33,4 @@ class AccountAnalyticLine(models.Model):
                         'employee': [e.name for e in employees],
                     })
             else:
-                raise ValidationError(_('The User field should be filled.'))
+                raise ValidationError(_('The User field must be filled.'))

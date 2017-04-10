@@ -9,6 +9,19 @@ Employee Product
 Add product_id field to hr_employee. 
  * Calculate the new account analaytic line amount.
 
+Known issues / Roadmap
+======================
+
+* The sale_timesheet module is not compatible, sale_timesheet auto_install must be False.  
+
+Bug Tracker
+===========
+
+Bugs are tracked on `GitHub Issues
+<https://github.com/OCA/hr-timesheet/issues>`_. In case of trouble, please
+check there if your issue has already been reported. If you spotted it first,
+help us smash it by providing detailed and welcomed feedback.
+
 Credits
 =======
 
