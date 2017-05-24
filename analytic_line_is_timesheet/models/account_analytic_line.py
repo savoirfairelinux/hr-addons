@@ -32,3 +32,14 @@ class AccountAnalyticLine(models.Model):
         super(AccountAnalyticLine, self).write(vals)
         if 'is_timesheet' in vals or 'user_id' in vals:
             self.filtered(lambda l: l.is_timesheet).compute_timesheet_values()
+
+    @api.depends(
+        'date', 'user_id', 'project_id',
+        'sheet_id_computed.date_to', 'sheet_id_computed.date_from',
+        'sheet_id_computed.employee_id', 'is_timesheet')
+    def _compute_sheet(self):
+        timesheets = self.filtered(lambda l: l.is_timesheet)
+        super(AccountAnalyticLine, timesheets)._compute_sheet()
+
+        for line in self.filtered(lambda l: not l.is_timesheet):
+            line.sheet_id = None
