@@ -10,7 +10,7 @@ class HrEmployee(models.Model):
 
     _inherit = "hr.employee"
 
-    product_id = fields.Many2one('product.product')
+    product_id = fields.Many2one('product.product', string='Product')
 
     @api.constrains('product_id')
     def _check_product_id(self):

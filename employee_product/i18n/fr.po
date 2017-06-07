@@ -25,14 +25,19 @@ msgstr "Ligne analytique"
 #. module: employee_product
 #: code:addons/employee_product/models/account_analytic_line.py:0
 #, python-format
-msgid "The product %s assigned to the employee is not a service product."
-msgstr "Le produit %s assigné à l'employé n'est pas de type service."
-
-#. module: employee_product
-#: code:addons/employee_product/models/account_analytic_line.py:0
-#, python-format
 msgid "No product was assigned to the employee %s."
 msgstr "Aucun produit n'est assigné à l'employé %s."
+
+#. module: employee_product
+#: model:ir.model.fields,field_description:employee_product.field_hr_employee_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: employee_product
+#: code:addons/employee_product/models/hr_employee.py:0
+#, python-format
+msgid "The price of the product %s is not filled."
+msgstr "Le prix du produit %s n'est pas renseigné."
 
 #. module: employee_product
 #: code:addons/employee_product/models/hr_employee.py:0
@@ -41,13 +46,13 @@ msgid "The product assigned to the employee should be empty or a service product
 msgstr "Le produit assigné à l'employé devrait être soit vide soit de type service."
 
 #. module: employee_product
-#: code:addons/employee_product/models/hr_employee.py:0
+#: code:addons/employee_product/models/account_analytic_line.py:0
 #, python-format
-msgid "Warning"
-msgstr "Avertissement"
+msgid "The product %s assigned to the employee is not a service product."
+msgstr "Le produit %s assigné à l'employé n'est pas de type service."
 
 #. module: employee_product
 #: code:addons/employee_product/models/hr_employee.py:0
 #, python-format
-msgid "The price of the product %s is not filled."
-msgstr "Le prix du produit %s n'est pas renseigné."
+msgid "Warning"
+msgstr "Avertissement"
