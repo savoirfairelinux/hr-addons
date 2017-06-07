@@ -26,6 +26,11 @@ msgid "Employee"
 msgstr "Employé"
 
 #. module: hr_timesheet_employee
+#: model:ir.ui.view,arch_db:hr_timesheet_employee.view_hr_timesheet_sheet_filter
+msgid "My Team"
+msgstr "Mon équipe"
+
+#. module: hr_timesheet_employee
 #: code:addons/hr_timesheet_employee/models/account_analytic_line.py:0
 #, python-format
 msgid "No employee attached to the user %s was found."
