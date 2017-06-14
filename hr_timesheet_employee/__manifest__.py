@@ -15,5 +15,7 @@
     "depends": [
         "analytic_line_is_timesheet",
     ],
-    "data": [],
+    "data": [
+        "views/hr_timesheet_sheet.xml",
+    ],
 }

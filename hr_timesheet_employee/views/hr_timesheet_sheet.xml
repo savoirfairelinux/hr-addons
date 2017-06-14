@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="view_hr_timesheet_sheet_filter" model="ir.ui.view">
+            <field name="name">hr_timesheet_sheet.sheet.filter</field>
+            <field name="model">hr_timesheet_sheet.sheet</field>
+            <field name="inherit_id" ref="hr_timesheet_sheet.view_hr_timesheet_sheet_filter"/>
+            <field name="arch" type="xml">             
+                <field name="employee_id" position="before">
+                    <filter name="my_team" string="My Team" domain="[('employee_id.parent_id.user_id','=',uid)]"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="hr_timesheet_sheet.act_hr_timesheet_sheet_form" model="ir.actions.act_window">
+            <field name="context">{'search_default_to_approve':1,'search_default_my_team':1}</field>
+        </record>
+
+    </data>
+</openerp>
