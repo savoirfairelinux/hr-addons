@@ -6,10 +6,11 @@
             <field name="name">hr_timesheet_sheet.sheet.filter</field>
             <field name="model">hr_timesheet_sheet.sheet</field>
             <field name="inherit_id" ref="hr_timesheet_sheet.view_hr_timesheet_sheet_filter"/>
-            <field name="arch" type="xml">             
-                <field name="employee_id" position="before">
+            <field name="arch" type="xml">
+                <filter name="message_needaction" position="before">
+                    <separator/>
                     <filter name="my_team" string="My Team" domain="[('employee_id.parent_id.user_id','=',uid)]"/>
-                </field>
+                </filter>
             </field>
         </record>
 
