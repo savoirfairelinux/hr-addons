@@ -2,7 +2,7 @@
     © 2017 Savoir-faire Linux <https://savoirfairelinux.com>
     License LGPL-3.0 or later (http://www.gnu.org/licenses/LGPL.html).
 */
-odoo.define('project_invoicing.hr_timesheet', function (require) {
+odoo.define('analytic_line_is_timesheet.hr_timesheet', function (require) {
 "use strict";
 
 require('hr_timesheet_sheet.sheet');
