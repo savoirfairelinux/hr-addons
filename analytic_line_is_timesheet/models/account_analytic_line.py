@@ -12,9 +12,8 @@ class AccountAnalyticLine(models.Model):
 
     is_timesheet = fields.Boolean(string="Is Timesheet")
 
-    @api.multi
     def compute_timesheet_values(self):
-        return True
+        return {}
 
     @api.model
     def create(self, vals):
@@ -23,7 +22,9 @@ class AccountAnalyticLine(models.Model):
             if not line.user_id:
                 raise ValidationError(_(
                     'No user was linked to this timesheet entry.'))
-            line.compute_timesheet_values()
+            timesheet_values = line.compute_timesheet_values()
+            if timesheet_values:
+                line.write(timesheet_values)
 
         return line
 
@@ -31,7 +32,10 @@ class AccountAnalyticLine(models.Model):
     def write(self, vals):
         super(AccountAnalyticLine, self).write(vals)
         if 'is_timesheet' in vals or 'user_id' in vals:
-            self.filtered(lambda l: l.is_timesheet).compute_timesheet_values()
+            for line in self:
+                timesheet_values = line.compute_timesheet_values()
+                if timesheet_values:
+                    line.write(timesheet_values)
 
     @api.depends(
         'date', 'user_id', 'project_id',
