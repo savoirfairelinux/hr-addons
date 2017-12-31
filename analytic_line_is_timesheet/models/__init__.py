@@ -5,4 +5,5 @@
 from . import (
     account_analytic_line,
     project_task,
+    hr_employee,
 )

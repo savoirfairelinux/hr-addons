@@ -6,13 +6,17 @@
 Timesheet Employee
 ==================
 
-Adds is_timesheet field to the AccountAnalyticLine model. 
-This module is relevant because this field has been deleted for the community version of Odoo 10.0.
+Adds :
+* is_timesheet to an analytic line, which makes this module relevant since this field was deleted in the community version of Odoo 10.0.
+* employee to an analytic line which is also a timesheet, it corresponds to the unique employee linked to the user.
+* product_id to an employee, hence the new account analaytic line amount computation.
+
 
 Known issues / Roadmap
 ======================
 
 * This module should not be added to the Enterprise version of Odoo 10.0 because the field is_timesheet already exists in it.
+* The sale_timesheet module is not compatible, sale_timesheet auto_install must be False.  
 
 Credits
 =======
